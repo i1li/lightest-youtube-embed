@@ -21,3 +21,7 @@ If a video is set as not embeddable by Youtube and you'd just like to make a lin
 ```html
 <y-t id="u05S9cq2bLY" class="no-embed" title="A Perfect Circle - Disillusioned [Audio]"></y-t>
 ```
+Hyperlinks for videos by default open in the standalone URL at the minimal youtube-nocookie.com/embed address. Some videos are allowed to be embedded, but not played at the youtube.com/embed address, so just give those the class name "no-link-embed"
+```html
+<y-t id="_mEsA9uFug8" class="no-link-embed" title="Astropilot - Weightless Mind"></y-t>
+```

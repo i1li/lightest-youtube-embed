@@ -2,11 +2,17 @@ class YTEmbed extends HTMLElement {
   constructor() {
     super();
     const [id, params] = this.getAttribute('id').split('?');
-    let href = `https://www.youtube.com/watch?v=${id}`;
-    const startParam = params && params.match(/start=(\d+)/);
-    if (startParam) {
-      const startTime = startParam[1];
-      href += `&t=${startTime}`;
+    const baseUrl = this.classList.contains('no-link-embed') || this.classList.contains('no-embed') ? 'https://www.youtube.com/watch?v=' : 'https://www.youtube-nocookie.com/embed/';
+    let href = `${baseUrl}${id}`;
+    if (params) {
+      href += `?${params}`;
+      if (this.classList.contains('no-link-embed')) {
+        const startParam = params.match(/start=(\d+)/);
+        if (startParam) {
+          const startTime = startParam[1];
+          href = href.replace(/start=\d+&?/, '') + `&t=${startTime}`;
+        }
+      }
     }
     this.style.width = '100%';
     this.link = document.createElement('a');
@@ -34,8 +40,9 @@ class YTEmbed extends HTMLElement {
     const iframeExists = this.wrapper.querySelector('iframe');
     if (!iframeExists) {
       const [id, params] = this.videoId.split('?');
+      const iframeSrc = params ? `https://www.youtube-nocookie.com/embed/${id}?${params}` : `https://www.youtube-nocookie.com/embed/${id}`;
       const iframe = document.createElement('iframe');
-      iframe.src = params ? `https://www.youtube-nocookie.com/embed/${id}?${params}` : `https://www.youtube-nocookie.com/embed/${id}`;
+      iframe.src = iframeSrc;
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       iframe.allowFullscreen = true;
       iframe.className = 'yt';
