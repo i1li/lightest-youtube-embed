@@ -1,24 +1,16 @@
-if-you-dont-have {
-    position: relative;
+  .yt-wrapper {
     display: none;
-    max-width: 720px;
-    max-width: 100%;
-    min-width: 90%;
-    padding-bottom: 56.25%;
+    position: relative;
     margin: auto;
-    opacity: .88;
-}
-if-you-dont-have:hover {
-    opacity: 1;
-}
-if-you-dont-have > iframe {
+    max-width: 720px;
+    padding-bottom: 56.25%;
+  }
+  .yt {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     max-height: 95vh;
-    position: absolute;
-    left: 0;
-    border: .15rem rgba(255,0,0,.3) groove;
-}
-iframe:hover {
-    border: .15rem rgba(255,0,0,.7) ridge;
-}
+    border: 0;
+  }

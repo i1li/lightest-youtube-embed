@@ -2,19 +2,17 @@
 The lightest youtube video embedder ever. Show/ hide toggle button saves space and resources until needed.
 Example usage:
 ```html
-<a href="https://www.youtube.com/watch?v=_mEsA9uFug8" rel="noreferrer" target="_blank">"Astropilot - Weightless Mind"</a>
-<button class="showHideButton" onclick="toggleVideo(this, '_mEsA9uFug8')">Show/Hide</button>
-<if-you-dont-have class="you-dont-have-style"></if-you-dont-have>
+<y-t id="_mEsA9uFug8" title="Astropilot - Weightless Mind"></y-t>
 ```
-
+Shows a link 
 You can include [params](https://developers.google.com/youtube/player_parameters#Parameters) like in the following examples:
 ```html
-<a href="https://www.youtube.com/watch?v=Yta55u2zP2U">"The Gender War (Könskriget), pt1 [1/6] English subs (click CC)"</a>
-<button class="showHideButton" onclick="toggleVideo(this, 'Yta55u2zP2U?cc_lang_pref=en&cc_load_policy=1')">Show/Hide</button>
-<if-you-dont-have class="you-dont-have-style"></if-you-dont-have>
-<br/>
-<a href="https://www.youtube.com/watch?v=2rzvoKbZXZg&t=60">"How Covert Narcissists Brain Wash Their Victims"</a>
-<button class="showHideButton" onclick="toggleVideo(this, '2rzvoKbZXZg?start=60')">Show/Hide</button>
-<if-you-dont-have class="you-dont-have-style" style="opacity: .7;"></if-you-dont-have>
+<y-t id="2rzvoKbZXZg?start=60" title="How Covert Narcissists Brain Wash Their Victims"></y-t><br/>
+<y-t id="JSggxkx6iDo?end=3542" title="Music: Erothyme + Actualize Visuals - Featherbed Sessions Mix"></y-t><br/>
+<y-t id="Yta55u2zP2U?cc_lang_pref=en&cc_load_policy=1" title="The Gender War (Könskriget)"></y-t><br/>
+```
+If a video is set as not embeddable by Youtube and you'd just like to make a link for it, just include class name "no-embed":
+```html
+<y-t id="u05S9cq2bLY" class="no-embed" title="A Perfect Circle - Disillusioned [Audio]"></y-t>
 ```
 You can view the [Demo site](https://y0.netlify.app/) as part of [Minimal, Responsive, Pure Javascript, Single Page App](https://github.com/i1li/i)
