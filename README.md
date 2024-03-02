@@ -19,9 +19,9 @@ You can include [params](https://developers.google.com/youtube/player_parameters
 ```
 If a video is set as not embeddable by Youtube and you'd just like to make a link for it, just include class name "no-embed":
 ```html
-<y-t id="u05S9cq2bLY" class="no-embed" title="A Perfect Circle - Disillusioned [Audio]"></y-t>
+<y-t id="u05S9cq2bLY" class="no-embed" title="Music: A Perfect Circle - Disillusioned"></y-t>
 ```
-Hyperlinks for videos by default open in the standalone URL at the minimal youtube-nocookie.com/embed address. Some videos are allowed to be embedded, but not played at the youtube.com/embed address, so just give those the class name "no-link-embed"
+Links for videos by default open at Youtube's minimal embed address, youtube-nocookie.com/embed . Some videos are allowed to be embedded, but not played at the standalone embed address, so just give those the class name "no-link-embed", and they will still be embedded, but the hyperlink will be to the main youtube.com version. (Links with "no-embed" class already get this behavior)
 ```html
 <y-t id="_mEsA9uFug8" class="no-link-embed" title="Astropilot - Weightless Mind"></y-t>
 ```
