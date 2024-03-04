@@ -1,5 +1,5 @@
 # Lightest Youtube Embed
-The lightest youtube video embed ever: elimates need for Youtube Iframe API, with totally responsive resizing, and inline capability that doesn't cause line breaks. Show / hide toggle button eliminates wasted space and resources, and increases user privacy.
+The lightest youtube video embed ever: eliminates need for Youtube Iframe API, with totally responsive resizing, and inline capability that doesn't cause line breaks. Show / hide toggle button eliminates wasted space and resources, and increases user privacy.
 
 You can view the [Demo site](https://y0.netlify.app/) as part of [Minimal, Responsive, Pure Javascript, Single Page App](https://github.com/i1li/i)
 ### Example usage:
