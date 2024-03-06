@@ -29,4 +29,28 @@ Links for videos by default open at YouTube's minimal embed address, youtube-noc
 ```
 
 
-TODO: handle detection of embed permissions, plus assignment of "no-embed" and "no-link-embed" automatically. Please submit a comment or pull request if you know a solution.
+TODO: handle detection of embed permissions, to assign "no-embed" and "no-link-embed" automatically. Please submit a comment or pull request if you know a solution.
+
+#### Code Summary
+
+The code defines a class `YTEmbed` that extends `HTMLElement`, allowing you to create a custom web component. Here's a breakdown of the key parts of the code:
+
+-   **Constructor**: Initializes the custom element, parsing the video ID and parameters from the element's `id` attribute. It decides the base URL based on the presence of certain classes and constructs the video URL accordingly. It also creates a link as a fallback or primary way to view the video and a button to toggle the video display.
+    
+-   `toggleVideo`** Method**: Checks if an iframe already exists within the element. If not, it creates one with the appropriate source URL and adds it to the DOM, allowing the video to be played within the page. If an iframe exists, it removes it, effectively toggling the video display.
+    
+-   **Custom Element Registration**: The last line of the code, `customElements.define('y-t', YTEmbed);`, registers the custom element with the browser, allowing you to use `<y-t>` tags in your HTML to embed YouTube videos with this custom behavior.
+    
+
+#### Key JavaScript Features Used
+
+-   **Template Literals**: Used for string interpolation and constructing URLs dynamically. Template literals are enclosed by backtick (\`) characters and allow embedded expressions, which are included in the string using `${expression}` syntax [1](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals), [2](https://www.w3schools.com/js/js_string_templates.asp)
+    
+-   **Custom Elements API**: Allows developers to define new HTML tags (custom elements) and their behavior. The `customElements.define()` method registers a new custom element with the browser [3](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+    
+-   **DOM API**: Methods like `document.createElement()`, `appendChild()`, and `querySelector()` are used to dynamically manipulate the page's content by adding or removing elements [4](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute), [5](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement), [6](https://www.w3schools.com/jsref/met_document_createelement.asp)
+    
+-   `getAttribute`** Method**: Retrieves the value of a specified attribute from the element. If the attribute does not exist, it returns `null` or an empty string [7](https://www.w3schools.com/jsref/met_element_getattribute.asp)
+    
+
+This code exemplifies modern JavaScript practices for creating reusable web components that enhance the functionality and interactivity of web pages.
