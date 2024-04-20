@@ -1,14 +1,16 @@
 # Lightest YouTube Embed
-The lightest YouTube video embed ever: eliminates need for YouTube Iframe API, with totally responsive resizing, and inline capability that doesn't cause line breaks. Show / hide toggle button eliminates wasted space and resources, and increases user privacy.
+The lightest YouTube video embed ever: eliminates need for YouTube Iframe API, with totally responsive resizing, and inline capability that doesn't cause line breaks. Also supports playlist embedding, and playlist creation from scratch without an account. Show / hide toggle button eliminates wasted space and resources, and increases user privacy.
 
 You can view the [Demo site](https://y0.netlify.app/) as part of [Minimal, Responsive, Pure Javascript, Single Page App](https://github.com/i1li/i)
 ### Example usage:
 ```html
-<y-t v="_mEsA9uFug8" t="Music: Astropilot - Weightless Mind"></y-t>
+<y-t v="_mEsA9uFug8" t="Music: Astropilot - Weightless Mind"></y-t><br/>
+<y-t v="GS9ImrohkW4,1sCoTSHn7WE" t="State Azure"></y-t><br/>
+<y-t v="PLiz2G6tBYC82nX1lRH9ShOoBm3j2p2ROm" class="no-link-embed" t="Alan Watts Chillstep"></y-t>
 ```
-Shows a link to view in new tab, with a show/hide button next to it. 
+Shows a link to view in new tab, with a show/hide button next to it.
 
-'v' is just the id from the YouTube URL, after the part that says "watch?v="
+'v' is just the id from the YouTube URL, after the part that says "watch?v=", or for playlists it begins with 'PL'. You can use a playlist ID from a playlist that is already generated, or make your own by putting multiple video IDs, comma separated.
 
 't' is an optional field for title, if empty, default text is "View Video", or use `add-titles.js` to automatically populate 't' with it's title on YouTube. To do this, simply run `npm i axios` and then `node add-titles.js`. This will add appropriate 't' attributes to every <y-t> element that doesn't already have one in your index.html file.
 
