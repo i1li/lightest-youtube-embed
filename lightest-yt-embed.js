@@ -51,16 +51,13 @@ class YTEmbed extends HTMLElement {
     this.link.href = this.linkUrl;
     this.button = document.createElement('button');
     this.button.textContent = '▶️ Play';
+    this.button.title = 'Play Video';
     this.button.className = 'showHideButton';
     if (this.classList.contains('no-embed')) {
-      this.button.title = 'Play video in new tab';
-      this.button.onclick = () => {
-        window.open(this.linkUrl);
-      };
+      this.button.onclick = () => window.open(this.linkUrl);
       this.appendChild(this.button);
       this.appendChild(this.link);
     } else {
-      this.button.title = 'Play Video';
       this.button.onclick = () => this.toggleVideo();
       this.wrapper = document.createElement('div');
       this.wrapper.className = 'yt-wrapper';
