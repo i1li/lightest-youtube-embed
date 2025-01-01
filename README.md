@@ -10,9 +10,9 @@ You can view the [Demo site](https://y0.netlify.app/) as part of [Minimal, Respo
 ```
 Shows a link to view in new tab, with a show/hide button next to it.
 
-'v' is just the id from the YouTube URL, after the part that says "watch?v=", or for playlists it begins with 'PL'. You can use a playlist ID from a playlist that is already generated, or make your own by putting multiple video IDs, comma separated.
+'v' is just the id from the YouTube URL, after the part that says "watch?v=". You can use a playlist ID from a playlist that is already generated, or make your own by putting multiple video IDs, comma separated.
 
-'t' is an optional field for title, if empty, default text is "View Video", or use `add-titles.js` to automatically populate 't' with it's title on YouTube. To do this, simply run `npm i axios` and then `node add-titles.js`. This will add appropriate 't' attributes to every <y-t> element that doesn't already have one in your index.html file.
+'t' is an optional field for title, if empty, default text is "View Video", or use `yt-titles.js` to automatically populate 't' with its title on YouTube. To do this, simply run `node yt-titles.js`. This will add appropriate 't' attributes to every <y-t> element that doesn't already have one in your index.html file.
 
 
 You can include [params](https://developers.google.com/YouTube/player_parameters#Parameters) like in the following examples:
